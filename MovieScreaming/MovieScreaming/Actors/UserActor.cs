@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 namespace MovieScreaming.Actors
 {
     public class UserActor : ReceiveActor
-    {
-        
+    {        
 
         private string _currentlyWatching;
 
@@ -43,7 +42,6 @@ namespace MovieScreaming.Actors
             ColorConsole.WriteLineYellow(string.Format("User currently playing movie: {0}", movieTitle));
 
             Become(Playing);
-
         }
 
         private void StopPlayingCurrentMovie()
@@ -67,13 +65,11 @@ namespace MovieScreaming.Actors
         protected override void PreRestart(Exception reason, object message)
         {
             ColorConsole.WriteLineGreen("UserActor PreRestart because: " + reason);
-
             base.PreRestart(reason, message);
         }
 
         protected override void PostRestart(Exception reason)
         {
-
             ColorConsole.WriteLineGreen("UserActor PostRestart because: " + reason);
             base.PostRestart(reason);
         }
