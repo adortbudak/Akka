@@ -1,7 +1,6 @@
 ﻿using Akka.Actor;
 using MovieScreaming.Messages;
 using System;
-using System.Threading.Tasks;
 
 namespace MovieScreaming.Actors
 {
