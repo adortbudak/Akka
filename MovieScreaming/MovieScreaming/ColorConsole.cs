@@ -47,5 +47,13 @@ namespace MovieScreaming
             Console.WriteLine(message);
             Console.ForegroundColor = beforeColor;
         }
+
+        public static void WriteLineMagenta(string message)
+        {
+            var beforeColor = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine(message);
+            Console.ForegroundColor = beforeColor;
+        }
     }
 }

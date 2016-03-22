@@ -43,6 +43,9 @@ namespace MovieScreaming.Actors
             _currentlyWatching = movieTitle;
             ColorConsole.WriteLineYellow(string.Format("User currently playing movie: {0}", movieTitle));
 
+            Context.ActorSelection("/user/Playback/PlaybackStatistics/MoviePlayCounter")
+                .Tell(new IncrementPlayCountMessage(movieTitle));
+
             Become(Playing);
         }
 
