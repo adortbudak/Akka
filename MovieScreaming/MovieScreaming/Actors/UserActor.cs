@@ -10,10 +10,10 @@ namespace MovieScreaming.Actors
 
         private string _currentlyWatching;
 
-        public UserActor()
+        public UserActor(int userId)
         {
-            Console.WriteLine("Creating a UserActor");
-            ColorConsole.WriteLineCyan("Setting the initial behaviour to stopped");
+            //Console.WriteLine("Creating a UserActor");
+            //ColorConsole.WriteLineYellow("Setting the initial behaviour to stopped");
             Stopped();
         }      
                        
@@ -25,6 +25,8 @@ namespace MovieScreaming.Actors
             Receive<StopMovieMessage>
                 (message => StopPlayingCurrentMovie());
 
+            ColorConsole.WriteLineYellow("UserActor has now become playing");
+
         }
 
         private void Stopped()
@@ -33,7 +35,7 @@ namespace MovieScreaming.Actors
             Receive<StopMovieMessage>
                 (message =>  ColorConsole.WriteLineRed("Cannot stop if nothing is playing"));
 
-            ColorConsole.WriteLineCyan("UserActor has now become stopped");
+            ColorConsole.WriteLineYellow("UserActor has now become stopped");
         }
 
         private void StartPlayingMovie(string movieTitle)
@@ -54,23 +56,23 @@ namespace MovieScreaming.Actors
 
         protected override void PreStart()
         {
-            ColorConsole.WriteLineGreen("UserActor PreStart");
+            ColorConsole.WriteLineYellow("UserActor PreStart");
         }
 
         protected override void PostStop()
         {
-            ColorConsole.WriteLineGreen("UserActor PostStop");
+            ColorConsole.WriteLineYellow(string.Format("UserActor {0} PostStop",_currentlyWatching));
         }
 
         protected override void PreRestart(Exception reason, object message)
         {
-            ColorConsole.WriteLineGreen("UserActor PreRestart because: " + reason);
+            ColorConsole.WriteLineYellow("UserActor PreRestart because: " + reason);
             base.PreRestart(reason, message);
         }
 
         protected override void PostRestart(Exception reason)
         {
-            ColorConsole.WriteLineGreen("UserActor PostRestart because: " + reason);
+            ColorConsole.WriteLineYellow("UserActor PostRestart because: " + reason);
             base.PostRestart(reason);
         }
     }

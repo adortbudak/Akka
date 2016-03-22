@@ -8,9 +8,8 @@ namespace MovieScreaming.Actors
     {
         public PlaybackActor()
         {
-            Console.WriteLine("Creating PlaybackActor");
-
-            Receive<PlayMovieMessage>(message => HandlePlayMovieMessage(message));
+            Context.ActorOf(Props.Create<UserCoordinatorActor>(), "UserCoordinator");
+            Context.ActorOf(Props.Create<PlaybackStatisticsActor>(), "PlaybackStatistics");
         }
 
         protected override void PreStart()

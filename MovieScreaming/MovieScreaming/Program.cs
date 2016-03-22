@@ -2,6 +2,7 @@
 using MovieScreaming.Actors;
 using MovieScreaming.Messages;
 using System;
+using System.Threading;
 
 namespace MovieScreaming
 {
@@ -44,7 +45,7 @@ namespace MovieScreaming
 
                 if (command.StartsWith("exit"))
                 {
-                    MovieStreamingActorSystem.Shutdown();
+                    MovieStreamingActorSystem.Terminate();
                     MovieStreamingActorSystem.AwaitTermination();
                     ColorConsole.WriteLineGray("Actor system shutdown");
                     Console.ReadKey();
@@ -87,6 +88,11 @@ namespace MovieScreaming
 
             
 
+        }
+
+        private static void ShortPause()
+        {
+            Thread.Sleep(2000);
         }
     }
 }
