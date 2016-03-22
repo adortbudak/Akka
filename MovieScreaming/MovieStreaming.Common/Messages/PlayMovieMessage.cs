@@ -1,4 +1,4 @@
-﻿namespace MovieScreaming.Messages
+﻿namespace MovieStreaming.Common.Messages
 {
     public class PlayMovieMessage
     {

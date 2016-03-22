@@ -1,12 +1,9 @@
 ﻿using Akka.Actor;
-using MovieScreaming.Messages;
+using MovieStreaming.Common.Messages;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace MovieScreaming.Actors
+namespace MovieStreaming.Common.Actors
 {
     public class UserCoordinatorActor : ReceiveActor
     {

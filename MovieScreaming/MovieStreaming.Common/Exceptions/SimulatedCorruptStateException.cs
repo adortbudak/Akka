@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace MovieScreaming.Actors
+namespace MovieStreaming.Common.Exceptions
 {
     [Serializable]
     public class SimulatedCorruptStateException : Exception

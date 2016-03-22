@@ -1,11 +1,8 @@
 ﻿using Akka.Actor;
+using MovieStreaming.Common.Exceptions;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace MovieScreaming.Actors
+namespace MovieStreaming.Common.Actors
 {
     public class PlaybackStatisticsActor : ReceiveActor
     {

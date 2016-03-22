@@ -1,10 +1,10 @@
 ﻿using Akka.Actor;
-using MovieScreaming.Actors;
-using MovieScreaming.Messages;
+using MovieStreaming.Common.Actors;
+using MovieStreaming.Common.Messages;
 using System;
 using System.Threading;
 
-namespace MovieScreaming
+namespace MovieStreaming
 {
     class Program
     {
@@ -46,45 +46,13 @@ namespace MovieScreaming
                 if (command.StartsWith("exit"))
                 {
                     MovieStreamingActorSystem.Terminate();
+                    //MovieStreamingActorSystem.WhenTerminated.Dispose();
                     MovieStreamingActorSystem.AwaitTermination();
                     ColorConsole.WriteLineGray("Actor system shutdown");
                     Console.ReadKey();
                     Environment.Exit(1);
                 }
-            } while (true);
-
-
-            //Props userActorProps = Props.Create<UserActor>();
-            //IActorRef userActorRef = MovieStreamingActorSystem.ActorOf(userActorProps, "UserActor");
-                        
-            //Console.ReadKey();
-            //Console.WriteLine("Sending a PlayMovieMessage (Akka.NET: The Movie)");
-            //userActorRef.Tell(new PlayMovieMessage("Akka.NET: The Movie", 42));
-
-
-            //Console.ReadKey();
-            //Console.WriteLine("Sending a PlayMovieMessage (Boolean Lies)");
-            //userActorRef.Tell(new PlayMovieMessage("Boolean Lies", 77));
-
-            //Console.ReadKey();
-            //Console.WriteLine("Sending a StopMovieMessage");
-            //userActorRef.Tell(new StopMovieMessage());
-
-            //Console.ReadKey();
-            //Console.WriteLine("Sending another StopMovieMessage");
-            //userActorRef.Tell(new StopMovieMessage());
-            
-            
-            //Console.ReadKey();
-
-            //MovieStreamingActorSystem.Terminate();
-
-            //MovieStreamingActorSystem.AwaitTermination();
-                        
-
-            //Console.WriteLine("Actor system shutdown");
-
-            //Console.ReadKey();
+            } while (true);          
 
             
 

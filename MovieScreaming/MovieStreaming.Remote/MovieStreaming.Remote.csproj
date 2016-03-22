@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BFE1EE15-98AF-44D9-A4DE-C088627C3B3B}</ProjectGuid>
+    <ProjectGuid>{FBC06562-B154-4C40-B7FB-04105C9BC8FD}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MovieScreaming</RootNamespace>
-    <AssemblyName>MovieScreaming</AssemblyName>
+    <RootNamespace>MovieStreaming.Remote</RootNamespace>
+    <AssemblyName>MovieStreaming.Remote</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -22,7 +22,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,9 +31,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>MovieScreaming.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Akka, Version=1.0.6.16, Culture=neutral, processorArchitecture=MSIL">
@@ -55,23 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Actors\MoviePlayCounterActor.cs" />
-    <Compile Include="Actors\PlaybackActor.cs" />
-    <Compile Include="Actors\PlaybackStatisticksActor.cs" />
-    <Compile Include="Actors\SimulatedCorruptStateException.cs" />
-    <Compile Include="Actors\SimulatedTerribleMovieException.cs" />
-    <Compile Include="Actors\UserActor.cs" />
-    <Compile Include="Actors\UserCoordinatorActor.cs" />
-    <Compile Include="ColorConsole.cs" />
-    <Compile Include="Messages\IncrementPlayCountMessage.cs" />
-    <Compile Include="Messages\PlayMovieMessage.cs" />
-    <Compile Include="Messages\StopMovieMessage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MovieStreaming.Common\MovieStreaming.Common.csproj">
+      <Project>{da0a6d24-2ac1-42b0-b25f-445970c05ee2}</Project>
+      <Name>MovieStreaming.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

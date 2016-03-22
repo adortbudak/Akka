@@ -1,10 +1,10 @@
 ﻿using Akka.Actor;
-using MovieScreaming.Messages;
 using System.Collections.Generic;
 using System;
-using System.Threading.Tasks;
+using MovieStreaming.Common.Messages;
+using MovieStreaming.Common.Exceptions;
 
-namespace MovieScreaming.Actors
+namespace MovieStreaming.Common.Actors
 {
     public class MoviePlayCounterActor :ReceiveActor
     {

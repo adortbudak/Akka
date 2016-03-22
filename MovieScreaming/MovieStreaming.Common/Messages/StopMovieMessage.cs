@@ -1,5 +1,5 @@
 ﻿
-namespace MovieScreaming.Messages
+namespace MovieStreaming.Common.Messages
 {
     public class StopMovieMessage
     {
